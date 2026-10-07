@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#FFF1EC" />
+<title>Lumi — AI Skin & Glow-Up Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=4" />
+</head>
+<body>
+<div class="phone">
+
+  <!-- ============ START ============ -->
+  <section id="view-start" class="view active">
+    <div class="brand-mark">✨</div>
+    <h1 class="logo">Lumi</h1>
+    <p class="tagline">Your AI glow-up coach</p>
+    <div class="hero-card">
+      <div class="hero-ring">
+        <span class="hero-ring-num">87</span>
+        <span class="hero-ring-lbl">Glow Score</span>
+      </div>
+      <p class="hero-blurb">Scan your skin in 10 seconds. Get a real analysis and a routine built for <em>your</em> face.</p>
+    </div>
+    <button id="btn-start" class="btn btn-primary">Analyze my skin</button>
+    <p class="micro">No account needed · First scan free</p>
+    <p class="disclaimer-sm">Lumi gives cosmetic, educational guidance only. It is not a medical device and does not diagnose or treat any condition.</p>
+    <p class="micro foot-links"><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></p>
+  </section>
+
+  <!-- ============ CAPTURE ============ -->
+  <section id="view-capture" class="view">
+    <button class="back" data-back="view-start">‹</button>
+    <h2 class="screen-title">Take a selfie</h2>
+    <p class="screen-sub">Face the light. No makeup, no filter, neutral expression.</p>
+
+    <label id="drop" class="capture-frame" for="file-input">
+      <img id="preview" alt="" hidden />
+      <div id="capture-placeholder" class="capture-placeholder">
+        <div class="cap-icon">📷</div>
+        <span>Tap to take or upload a photo</span>
+      </div>
+    </label>
+    <input id="file-input" type="file" accept="image/*" capture="user" hidden />
+
+    <ul class="tips">
+      <li>✅ Bright, even light</li>
+      <li>✅ Front-facing, fill the frame</li>
+      <li>🚫 Avoid harsh shadows / filters</li>
+    </ul>
+
+    <button id="btn-analyze" class="btn btn-primary" disabled>Analyze</button>
+  </section>
+
+  <!-- ============ ANALYZING ============ -->
+  <section id="view-analyzing" class="view">
+    <div class="scan-visual">
+      <img id="scan-img" alt="" />
+      <div class="scan-line"></div>
+    </div>
+    <h2 class="screen-title">Analyzing your skin…</h2>
+    <ul id="analyze-steps" class="analyze-steps"></ul>
+    <div class="bar"><div id="analyze-bar" class="bar-fill"></div></div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="view-results" class="view">
+    <h2 class="screen-title">Your skin report</h2>
+    <div class="score-wrap">
+      <svg class="ring" viewBox="0 0 120 120">
+        <circle class="ring-bg" cx="60" cy="60" r="52" />
+        <circle id="score-ring" class="ring-fg" cx="60" cy="60" r="52" />
+      </svg>
+      <div class="score-center">
+        <span id="glow-score" class="score-num">–</span>
+        <span class="score-lbl">Glow Score</span>
+      </div>
+    </div>
+    <p id="score-verdict" class="score-verdict"></p>
+
+    <div id="metrics" class="metrics"></div>
+
+    <div class="concern-block">
+      <h3 class="block-title">Your focus areas</h3>
+      <div id="concerns" class="concerns"></div>
+    </div>
+
+    <button id="btn-get-routine" class="btn btn-primary">Get my glow-up routine</button>
+    <p class="disclaimer-sm">Estimates are based on your photo and lighting. For any medical skin concern, see a dermatologist.</p>
+  </section>
+
+  <!-- ============ PAYWALL ============ -->
+  <section id="view-paywall" class="view">
+    <button class="back" data-back="view-results">‹</button>
+    <div class="paywall-head">
+      <div class="brand-mark sm">✨</div>
+      <h2 class="screen-title">Unlock your glow-up plan</h2>
+    </div>
+    <ul class="unlock-list">
+      <li>🧴 Your personalized AM + PM routine</li>
+      <li>📈 Daily progress tracking &amp; before/after</li>
+      <li>🔁 Unlimited re-scans to watch your score climb</li>
+      <li>🎯 Weekly focus tuned to your skin</li>
+    </ul>
+    <div class="price-card">
+      <div class="price-badge">3 days free</div>
+      <div class="price-main"><span id="price-weekly">$6.99</span><span class="price-per">/week</span></div>
+      <p class="price-sub">Free for 3 days, then billed weekly. Cancel anytime.</p>
+    </div>
+    <button id="btn-trial" class="btn btn-primary">Start my free trial</button>
+    <button id="btn-restore" class="btn btn-ghost">Restore purchase</button>
+    <p class="legal">By continuing you agree to the <a href="terms.html">Terms</a> &amp; <a href="privacy.html">Privacy Policy</a>. Subscription auto-renews until cancelled in your App Store settings.</p>
+    <button id="btn-demo-unlock" class="demo-link">▷ Preview unlocked (demo)</button>
+  </section>
+
+  <!-- ============ ROUTINE ============ -->
+  <section id="view-routine" class="view">
+    <h2 class="screen-title">Your glow-up routine</h2>
+    <p id="routine-intro" class="screen-sub"></p>
+    <div id="routine-content" class="routine-content"></div>
+    <div class="routine-note">
+      💡 Introduce one new active at a time, patch-test first, and wear SPF every morning. This is cosmetic guidance, not medical advice.
+    </div>
+    <button id="btn-track" class="btn btn-primary">Track my progress</button>
+  </section>
+
+  <!-- ============ PROGRESS ============ -->
+  <section id="view-progress" class="view">
+    <h2 class="screen-title">Your progress</h2>
+    <div id="streak" class="streak"></div>
+    <div class="chart-card">
+      <div id="progress-chart" class="chart"></div>
+      <div class="chart-x" id="chart-x"></div>
+    </div>
+    <div id="progress-content" class="progress-content"></div>
+    <button id="btn-rescan" class="btn btn-primary">Scan again</button>
+    <button id="btn-reset" class="btn btn-ghost">Reset history</button>
+  </section>
+
+  <div id="toast" class="toast"></div>
+</div>
+<script src="app.js?v=2"></script>
+</body>
+</html>
