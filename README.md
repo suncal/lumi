@@ -1,5 +1,9 @@
 # Lumi — AI Skin & Glow-Up Coach
 
+[![Live demo](https://img.shields.io/badge/live-demo-0E6B52)](https://suncal.github.io/lumi/) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Stars](https://img.shields.io/github/stars/suncal/lumi?style=social)](https://github.com/suncal/lumi/stargazers)
+
+![screenshot](docs/hero.png)
+
 A working, self-contained web app that scans a selfie, computes a **real** skin analysis from the
 photo's pixels, returns a personalized routine, tracks progress, and gates the routine behind a
 weekly-trial paywall. Built to be shipped to the web today and wrapped for the App Store next.
@@ -55,3 +59,9 @@ App Store rejection. Stay in the "cosmetic coaching / glow-up" lane.
 
 Base rates are harsh (only ~8% of new apps clear $100k/yr). Your edge isn't the code — anyone can
 clone the mechanic — it's that you can *drive the traffic*. That's the whole bet.
+
+---
+
+**If this is useful to you, a ⭐ on the repo helps other people find it.** Issues and pull requests are welcome.
+
+Built by [Priyankar "Sunny" Chakraborty](https://github.com/suncal) · [everbuiltstudio.com](https://everbuiltstudio.com)
